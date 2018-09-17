@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card *ngFor="let quote of quoteCollections">
+      <img [src]="quote.imgpath">
+      <ion-card-content>
+        <ion-item>
+          <button ion-button item-left (click)="shareQuote(quote)">
+            Share
+          </button>
+          <button [@bounce]="bounceState" ion-button item-right (click)="addToFavorites(quote)">
+              Favorite!
+          </button>
+        </ion-item>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
